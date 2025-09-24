@@ -4,7 +4,7 @@ This document explains how to configure the template for local development and p
 
 ## Required environment variables
 
-Copy `.env.example` to `.env.local` and fill in the values.
+Copy `example-ENV.txt` to `.env.local` and fill in the values. (or just rename the file)
 
 - `NEXT_PUBLIC_SOLANA_RPC` - HTTP RPC endpoint for Solana (e.g. QuickNode/Alchemy). Example: `https://your-quicknode-url`.
 - `NEXT_PUBLIC_SOLANA_WS` - Optional websocket endpoint for Solana subscriptions. If not set, the template derives a `ws://`/`wss://` URL from `NEXT_PUBLIC_SOLANA_RPC`.
