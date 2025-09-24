@@ -3,9 +3,10 @@
 import React from "react";
 import { Account } from "./Account";
 import WalletConnect from "./WalletConnect";
-import { WalletOptions } from "./WalletOptions";
 import { useAccount } from "wagmi";
 
+// This component will show either the connected account
+// or the wallet connection options.
 export default function ConnectWallet() {
   const { isConnected } = useAccount();
   if (isConnected) return <Account />;

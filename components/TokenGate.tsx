@@ -6,6 +6,9 @@ import { useAccount } from "wagmi";
 import { useWallet } from "@solana/wallet-adapter-react";
 import Link from "next/link";
 
+// Simple token gate component that checks if a user is connected
+// with either an Ethereum or Solana wallet. Replace the `hasAccess`
+// logic with real token ownership checks as needed.
 export default function TokenGate({ children }: { children: React.ReactNode }) {
     // ETH (wagmi)
   const { address, isConnected } = useAccount();
