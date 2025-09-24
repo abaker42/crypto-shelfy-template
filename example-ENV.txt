@@ -1,0 +1,11 @@
+# Example environment variables for development and production
+# Copy this file to `.env.local` and set your provider values.
+
+# Solana RPC HTTP endpoint (e.g. QuickNode/Alchemy)
+NEXT_PUBLIC_SOLANA_RPC=https://api.devnet.solana.com
+# Optional explicit WS endpoint for Solana subscriptions (if using a separate ws endpoint)
+NEXT_PUBLIC_SOLANA_WS=wss://api.devnet.solana.com
+
+# WalletConnect v2 Project ID (obtain from https://cloud.walletconnect.com)
+# Leave empty to disable WalletConnect connector in the template.
+NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=
