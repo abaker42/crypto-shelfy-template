@@ -43,9 +43,9 @@ function WalletOption({
 
   React.useEffect(() => {
     if (readyInitial) return
-    let mounted = true
+    let mounted = true;
 
-    ;(async () => {
+    (async () => {
       try {
         const maybe = connector as unknown as { getProvider?: () => Promise<unknown>; ready?: boolean }
         if (typeof maybe.getProvider === 'function') {

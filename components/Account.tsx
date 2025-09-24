@@ -1,7 +1,7 @@
 "use client";
 
 import { useAccount, useDisconnect, useEnsAvatar, useEnsName } from "wagmi";
-import Link from "next/link";
+import Image from "next/image";
 
 // If an account is connected, we want to show some basic 
 // information, like the connected address and ENS name and 
@@ -17,16 +17,15 @@ export function Account() {
 
 	return (
 		<div>
-			{ensAvatar && <img alt='ENS Avatar' src={ensAvatar} />}
+			{ensAvatar && (
+				<Image width={48} height={48} alt='ENS Avatar' src={ensAvatar} />
+			)}
 			{address && <div>{ensName ? `${ensName} (${address})` : address}</div>}
-			<button onClick={() => disconnect()}>Disconnect</button>
-
-			<Link
-				href='/'
-				className='mt-6 px-6 py-3 bg-green-500 text-white rounded-xl shadow-lg hover:bg-green-600'
+			<button className ='focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900'
+				onClick={() => disconnect()}
 			>
-				Go Home 🏠
-			</Link>
+				Disconnect
+			</button>
 		</div>
 	);
 }

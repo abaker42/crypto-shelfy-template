@@ -47,19 +47,5 @@ You can configure the Solana RPC and websocket endpoints via environment variabl
 
 Setting these helps avoid subscription interruptions when using providers that require a separate websocket URL.
 
-## Preparing this template for distribution
 
-Before bundling or selling this template, please take these steps:
-
-- Remove or do not commit any `.env.local` that contains real API keys or project IDs. Add a `.env.example` (included) instead so buyers can configure their own keys.
-- Ensure `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID` is set by buyers if they want WalletConnect v2 support — WalletConnect requires a valid project id from https://cloud.walletconnect.com.
-- Update `package.json` metadata (`name`, `version`, `description`, `author`, `repository`) to reflect your product and licensing.
-- Include a `LICENSE` (this repo includes an MIT example). If you plan to sell a commercial license, replace the file and legal text accordingly.
-
-Packaging checklist:
-
-1. Remove `.next`, `node_modules`, and any local-only files before zipping.
-2. Keep `README.md`, `LICENSE`, `package.json`, `package-lock.json`/`pnpm-lock.yaml`, `app/`, `components/`, `lib/`, and `.env.example` in the distribution.
-3. Optionally include a short `SETUP.md` with steps to create a WalletConnect project id and configure Solana RPC providers (QuickNode/Alchemy).
-
-If you'd like, I can add a `pack` npm script to create a clean zip of the project ready for distribution.
+See `SETUP.md` for step-by-step setup and configuration guidance for WalletConnect and Solana RPC providers.

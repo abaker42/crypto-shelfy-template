@@ -1,15 +1,33 @@
 {
   "name": "crypto-shelfy-template",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "pack": "node ./scripts/pack.js"
   },
+  "description": "A minimal Next.js + Tailwind template with Ethereum (wagmi) and Solana wallet adapter support.",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "keywords": [
+    "nextjs",
+    "web3",
+    "solana",
+    "ethereum",
+    "wagmi",
+    "walletconnect"
+  ],
   "dependencies": {
+    "@solana/wallet-adapter-base": "^0.9.27",
     "@solana/wallet-adapter-react": "^0.15.39",
+    "@solana/wallet-adapter-react-ui": "^0.9.39",
     "@solana/wallet-adapter-wallets": "^0.19.37",
     "@solana/web3.js": "^1.98.4",
     "ethers": "^6.15.0",
@@ -25,6 +43,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "archiver": "^5.3.1",
     "eslint": "^9",
     "eslint-config-next": "15.5.3",
     "tailwindcss": "^4.1.13",
