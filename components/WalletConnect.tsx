@@ -1,6 +1,7 @@
 
 "use client";
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// ... code with 'any' types ...
 import React from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { Connector, useConnect, useAccount, useDisconnect } from "wagmi";
@@ -64,28 +65,32 @@ export default function WalletConnect() {
   }
 
   const handleSolConnect = async () => {
-    setSolError(null);
-    if (!wallet || !(wallet as any).ready) {
-      setSolError("Selected wallet is not ready. Make sure the wallet app/extension is installed and unlocked.");
-      return;
-    }
+		setSolError(null);
+		if (!wallet || !(wallet as any).ready) {
+			setSolError(
+				"Selected wallet is not ready. Make sure the wallet app/extension is installed and unlocked."
+			);
+			return;
+		}
 
-    try {
-      await solConnect();
-    } catch (err) {
-      const name = (err as any)?.name ?? "";
-      const message = (err as any)?.message ?? String(err);
-      if (name === "WalletNotReadyError") {
-        setSolError("Wallet not ready: ensure the wallet extension is installed and unlocked.");
-      } else {
-        setSolError(message || "Failed to connect to wallet.");
-      }
-      if (process.env.NODE_ENV === "development") {
-        // eslint-disable-next-line no-console
-        console.error("Solana connect error:", err);
-      }
-    }
-  };
+		try {
+			await solConnect();
+		} catch (err) {
+			const name = (err as any)?.name ?? "";
+			const message = (err as any)?.message ?? String(err);
+			if (name === "WalletNotReadyError") {
+				setSolError(
+					"Wallet not ready: ensure the wallet extension is installed and unlocked."
+				);
+			} else {
+				setSolError(message || "Failed to connect to wallet.");
+			}
+			if (process.env.NODE_ENV === "development") {
+				// eslint-disable-next-line no-console
+				console.error("Solana connect error:", err);
+			}
+		}
+	};
 
   return (
     <div className="flex flex-col space-y-2">
