@@ -31,10 +31,5 @@ npm run dev
 
 Open `http://localhost:3000` and test connecting wallets (MetaMask/Injected for Ethereum; Phantom/Solflare for Solana).
 
-## Packaging for distribution
-
-Before distributing the template:
-
-- Remove `.env.local` that contains real credentials.
-- Include `README.md`, `SETUP.md`, `LICENSE`, `package.json`, `package-lock.json`/`pnpm-lock.yaml`, `.env.example`, and the `app/`, `components/`, and `lib/` directories in your zip.
-- Optionally add a `pack` script to `package.json` that builds and zips the clean distribution.
+## DEV NOTE
+Token Gating only checks if a wallet is connected. For token/NFT ownership checks upgrade to premium version [LinkComingSoon].

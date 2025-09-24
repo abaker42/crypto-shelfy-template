@@ -46,6 +46,8 @@ You can configure the Solana RPC and websocket endpoints via environment variabl
 - `NEXT_PUBLIC_SOLANA_WS` - Websocket endpoint for subscriptions. If not set the code will derive a `ws://`/`wss://` URL from `NEXT_PUBLIC_SOLANA_RPC` by switching the protocol.
 
 Setting these helps avoid subscription interruptions when using providers that require a separate websocket URL.
+## DEV NOTE
+Token Gating only checks if a wallet is connected. For token/NFT ownership checks upgrade to premium version [LinkComingSoon].
 
 
 See `SETUP.md` for step-by-step setup and configuration guidance for WalletConnect and Solana RPC providers.
